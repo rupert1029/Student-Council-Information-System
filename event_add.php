@@ -43,13 +43,13 @@
 	<form method="POST" action="event_list.php">
   		<div class="row">
     		<div class="col">
-     	 		<input type="text" class="form-control" placeholder="Event Code" name="event_code" required>
+     	 		<h5>Event Code:</h5><input type="text" class="form-control" placeholder="Event Code" name="event_code" pattern="[A-Za-z]{3}" required>
     		</div>
     		<div class="col">
-      			<input type="text" class="form-control" placeholder="Event Name" name="event_name" required>
+      			<h5>Event Name:</h5><input type="text" class="form-control" placeholder="Event Name" name="event_name" pattern="[A-Za-z]{3}" required>
     		</div>
     		<div class="col">
-      			<input type="date" value="mm-dd-yyyy" class="form-control" placeholder="Date" name="date" required>
+      			<h5>Date:</h5><input type="date" value="mm-dd-yyyy" class="form-control" placeholder="Date" name="date" required>
     		</div>
   		</div><br/>
   		<br/><br/>

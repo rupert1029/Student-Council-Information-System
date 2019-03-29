@@ -45,10 +45,10 @@
   		</div><br/>
   		<div class="row">
     		<div class="col">
-     	 		<input type="text" class="form-control" placeholder="Section ID" name="section_id" required>
+     	 		<h5>Section ID:</h5><input type="text" class="form-control" placeholder="Section ID" name="section_id"  pattern="[A-Za-z0-9]+" required>
     		</div>
     		<div class="col">
-      			<input type="text" class="form-control" placeholder="Year Level" name="year" required>
+      			<h5>Year Level:</h5><input type="text" class="form-control" placeholder="Year Level" name="year"  pattern="[A-Za-z0-9]+" required>
     		</div>
   		</div><br/>
   		<br/><br/>

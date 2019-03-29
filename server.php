@@ -282,7 +282,7 @@
 		$event_code = $_POST['event_code'];
 		$penalty = $_POST['penalty'];
 
-		$query = "SELECT * FROM fines WHERE idn_to_unicode()umber ='$id_number'";
+		$query = "SELECT * FROM fines WHERE id_number ='$id_number'";
 		$results = mysqli_query($db, $query);
 		if (mysqli_num_rows($results)==1){
 			while ($row = mysqli_fetch_assoc($results)) {

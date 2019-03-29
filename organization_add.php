@@ -43,10 +43,10 @@
 	<form method="POST" action="organization_list.php">
   		<div class="row">
     		<div class="col">
-     	 		<input type="text" class="form-control" placeholder="Organization Code" name="organization_code" required>
+     	 		<h5>Organization Code:</h5><input type="text" class="form-control" placeholder="Organization Code" name="organization_code"  pattern="[A-Za-z0-9]+" required>
     		</div>
     		<div class="col">
-      			<input type="text" class="form-control" placeholder="Organization Name" name="organization_name" required>
+      			<h5>Organization Name:</h5><input type="text" class="form-control" placeholder="Organization Name" name="organization_name"  pattern="[A-Za-z0-9]+" required>
     		</div>
   		</div><br/>
   		<br/><br/>

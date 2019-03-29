@@ -43,7 +43,7 @@
 	<form method="POST" action="fines_list.php">
   		<div class="row" style="width:570px">
     		<div class="col">
-          <select name = "id_number" class="form-control">
+          <h5>Select Student:</h5><select name = "id_number" class="form-control">
           <option selected>Select Student</option>
               <?php 
                   $query = "SELECT * FROM student";
@@ -51,16 +51,16 @@
                   $count = mysqli_num_rows($results);
                     if($count = 1){
                       while ($row = mysqli_fetch_array($results)){?>
-                      <option value="<?php echo $row['id_number'] ?>" ><?php echo ucwords($row['first_name'] ." ". $row['middle_name'] ." ". $row['last_name']) ?></option>
+                      <option value="<?php echo $row['id_number'] ?>" ><?php echo ucwords($row['last_name'] ." ". $row['first_name'] ." ". $row['middle_name']) ?></option>
               
               <?php } 
                 }?>
         </select>
         </div>
-  		</div><br/>
+  		</div><br/><br/>
   		<div class="row">
     		<div class="col">
-     	 		<select name = "event_code" class="form-control">
+     	 		<h5>Select Event Name:</h5><select name = "event_code" class="form-control">
           <option selected>Event Code</option>
           <?php 
               $query = "SELECT * FROM event";
@@ -69,14 +69,14 @@
               if($count = 1){
                 while ($row = mysqli_fetch_array($results)){
                   ?>
-                <option value = "<?php echo $row['event_code'] ?>"><?php echo $row['event_code']?></option>
+                <option value = "<?php echo $row['event_code'] ?>"><?php echo $row['event_name']?></option>
               
               <?php } 
                 }?>
         </select>
     		</div>
     		<div class="col">
-      			<input type="number" class="form-control" placeholder="Penalty" name="penalty" required>
+      			<h5>Amount of Penalty:</h5><input type="text" class="form-control" placeholder="Penalty" name="penalty"  pattern="[0-9]+" required>
     		</div>
   		</div><br/><br/><br/>
   		<center>

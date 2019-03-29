@@ -46,6 +46,8 @@
         <th scope="col">Student Name</th> 
         <th scope="col">Event Code</th>
         <th scope="col">Penalty</th>
+        <th scope="col">Status</th>
+        <th scope="col">Date of Payment</th>
         <th scope="col">Options</th>
         </tr>
       </thead>
@@ -56,6 +58,8 @@
         <td><?php echo ucwords($row['last_name']." ".$row['first_name']." ".$row['middle_name'])?></td>
         <td><?php echo $row['event_code']?></td>
         <td><?php echo $row['penalty']?></td>
+        <td><?php echo $row['status']?></td>
+        <td><?php echo $row['date_of_payment']?></td>
         <td><a class="fa fa-edit" href="fines_update.php?edit8=<?php echo $row['id_number']; ?>"> Edit</a> | <a class="fa fa-trash" href ="#" data-toggle="modal" data-target="#exampleModal"> Delete</a></td>
         </tr>
       </tbody>

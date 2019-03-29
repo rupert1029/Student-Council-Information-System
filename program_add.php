@@ -43,16 +43,16 @@
 	<form method="POST" action="program_list.php">
   		<div class="row">
     		<div class="col">
-     	 		<input type="text" class="form-control" placeholder="Course Code" name="course_code" required>
+     	 		<h5>Course Code:</h5><input type="text" class="form-control" placeholder="Course Code" name="course_code"  pattern="[A-Za-z0-9]+" required>
     		</div>
     		<div class="col">
-      			<input type="text" class="form-control" placeholder="Course Name" name="course_name" required>
+      			<h5>Course Name:</h5><input type="text" class="form-control" placeholder="Course Name" name="course_name"  pattern="[A-Za-z0-9]+" required>
     		</div>
   		</div><br/>
   		<div class="row" style="width:380px">
   			<div class="col">
-  			<select class="custom-select" id="inputGroupSelect01" name="department_code">
-    			<option selected>Department Code</option>
+  			<h5>Department Name:</h5><select class="custom-select" id="inputGroupSelect01" name="department_code">
+    			<option selected>Department Name</option>
           <?php 
               $query = "SELECT * FROM department";
               $results = mysqli_query($db, $query); 

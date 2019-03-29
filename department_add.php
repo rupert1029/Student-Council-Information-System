@@ -45,10 +45,10 @@
   		</div><br/>
   		<div class="row">
     		<div class="col">
-     	 		<input type="text" class="form-control" placeholder="Department Code" name="department_code" required>
+     	 		<h5>Department Code:</h5><input type="text" class="form-control" placeholder="Department Code" name="department_code"  pattern="[A-Za-z0-9]+" required>
     		</div>
     		<div class="col">
-      			<input type="text" class="form-control" placeholder="Department Name" name="department_name" required>
+      			<h5>Department Name:</h5><input type="text" class="form-control" placeholder="Department Name" name="department_name"  pattern="[A-Za-z0-9]+" required>
     		</div>
   		</div><br/>
   		<br/><br/>

@@ -45,7 +45,7 @@
   		</div><br/>
   		<div class="row">
     		<div class="col">
-     	 		<select name = "id_number" class="form-control">
+     	 		<h5>Select Student:</h5><select name = "id_number" class="form-control">
 								  <option selected>Select Student</option>
 									<?php 
 										$query = "SELECT * FROM student";
@@ -61,7 +61,7 @@
 						</select>
     		</div>
     		<div class="col">
-      			<select name = "position" class="form-control">
+      			<h5>Position:</h5><select name = "position" class="form-control">
 								  <option selected>Select Position</option>
 									<option value="President">President</option>
 									<option value="Vice-President">Vice-President</option>
@@ -75,7 +75,7 @@
 						</select>
     		</div>
     		<div class="col">
-						<select name = "academic_code" class="form-control">
+						<h5>Academic Year:</h5><select name = "academic_code" class="form-control">
 				     		 <option selected>Select Academic Year</option>
 									<?php 
 										$query = "SELECT * FROM academic_year";

@@ -43,23 +43,23 @@
   <form method="POST" action="organization_moderator_list.php">
       <div class="row" style="width:300px">
         <div class="col">
-          <input type="text" class="form-control" placeholder="Instructor ID" name="instructor_id" required autofocus>
+          <h5>Instructor ID:</h5><input type="text" class="form-control" placeholder="Instructor ID" name="instructor_id"  pattern="[A-Za-z0-9]+" required autofocus>
         </div>
       </div><br/>
       <div class="row">
         <div class="col">
-          <input type="text" class="form-control" placeholder="Last Name" name="last_name" required>
+          <h5>Last Name:</h5><input type="text" class="form-control" placeholder="Last Name" name="last_name"  pattern="[A-Za-z0-9]+" required>
         </div>
         <div class="col">
-            <input type="text" class="form-control" placeholder="First Name" name="first_name" required>
+          <h5>First Name:</h5><input type="text" class="form-control" placeholder="First Name" name="first_name"  pattern="[A-Za-z0-9]+" required>
         </div>
         <div class="col">
-            <input type="text" class="form-control" placeholder="Middle Name" name="middle_name" required>
+          <h5>Middle Name:</h5><input type="text" class="form-control" placeholder="Middle Name" name="middle_name"  pattern="[A-Za-z0-9]+" required>
         </div>
       </div><br/>
       <div class="row">
         <div class="col">
-         <select name = "organization_code" class="form-control">
+         <h5>Organization Name:</h5><select name = "organization_code" class="form-control">
                   <option selected>Select Organization</option>
                   <?php 
                     $query = "SELECT * FROM organization";
@@ -75,7 +75,7 @@
               </select>
         </div>
         <div class="col">
-       <select name = "academic_code" class="form-control">
+       <h5>Academic Year/Semeter:</h5><select name = "academic_code" class="form-control">
                  <option selected>Select Academic Year</option>
                   <?php 
                     $query = "SELECT * FROM academic_year";

@@ -45,13 +45,13 @@
   		</div><br/>
   		<div class="row">
     		<div class="col">
-     	 		<input type="integer" class="form-control" placeholder="Academic Year Code" name="academic_code" required>
+     	 		<h5>Academic Code:</h5><input type="integer" class="form-control" placeholder="Academic Year Code" name="academic_code"  pattern="[A-Za-z0-9]+" required>
     		</div>
     		<div class="col">
-     	 		<input type="text" class="form-control" placeholder="Academic Year" name="acad_year" required>
+     	 		<h5>Academic Year:</h5><input type="text" class="form-control" placeholder="Academic Year" name="acad_year"  pattern="[A-Za-z0-9]+" required>
     		</div>
     		<div class="col">
-      			<input type="text" class="form-control" placeholder="Semester" name="semester" required>
+      			<h5>Semester:</h5><input type="text" class="form-control" placeholder="Semester" name="semester"  pattern="[A-Za-z0-9]+" required>
     		</div>
   		</div><br/>
   		<br/><br/>

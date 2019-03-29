@@ -46,7 +46,6 @@
     			<a href = "academicyear_list.php"><button type="button" class="btn btn-info" style="width: 200px; border-radius: 0px">Academic Year</button></a>
     			<a href = "event_list.php"><button type="button" class="btn btn-info" style="width: 200px; border-radius: 0px">Events</button></a>
     			<a href = "fines_list.php"><button type="button" class="btn btn-info" style="width: 200px; border-radius: 0px">Fines</button></a>
-    			<a href = ""><button type="button" class="btn btn-info" style="width: 200px; border-radius: 0px">Payment</button></a>
 
   			</div>
   		</div>

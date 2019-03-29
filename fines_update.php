@@ -59,7 +59,7 @@
 	<form method="POST" action="fines_list.php">
   		<div class="row" style="width:570px">
     		<div class="col">
-          <select name = "id_number" class="form-control">
+          <h5>Select Student Name:</h5><select name = "id_number" class="form-control">
           <option selected>Select Student</option>
               <?php 
                   $query = "SELECT * FROM student";
@@ -67,7 +67,7 @@
                   $count = mysqli_num_rows($results);
                     if($count = 1){
                       while ($row = mysqli_fetch_array($results)){?>
-                      <option value="<?php echo $row['id_number'] ?>" ><?php echo ucwords($row['first_name'] ." ". $row['middle_name'] ." ". $row['last_name']) ?></option>
+                      <option value="<?php echo $row['id_number'] ?>" ><?php echo ucwords($row['last_name'] ." ". $row['first_name'] ." ". $row['middle_name']) ?></option>
               
               <?php } 
                 }?>
@@ -76,25 +76,20 @@
   		</div><br/>
   		<div class="row">
     		<div class="col">
-     	 		<select name = "event_code" class="form-control">
-          <option selected>Event Code</option>
-          <?php 
-              $query = "SELECT * FROM event";
-              $results = mysqli_query($db, $query); 
-              $count = mysqli_num_rows($results);
-              if($count = 1){
-                while ($row = mysqli_fetch_array($results)){
-                  ?>
-                <option value = "<?php echo $row['event_code'] ?>"><?php echo $row['event_code']?></option>
-              
-              <?php } 
-                }?>
-        </select>
+      			<h5>Total Penalty:</h5><input type="text" class="form-control" value="<?php echo $penalty; ?>" name="penalty" style="width:540px" readonly>
     		</div>
-    		<div class="col">
-      			<input type="text" class="form-control" value="<?php echo $penalty; ?>" name="penalty" required>
-    		</div>
-  		</div><br/><br/><br/>
+  		</div><br/>
+        <div class="row">
+        <div class="col">
+          <h5>Status:</h5><select name = "status" class="form-control">
+                  <option selected>Status</option>
+                  <option value="Paid">Paid</option>
+          </select>
+        </div>
+        <div class="col">
+            <h5>Date of Payment:</h5><input type="date" value="mm-dd-yyyy" class="form-control" placeholder="Date" name="date_of_payment" required>
+        </div>
+      </div><br/><br/><br/>
   		<center>
 			<?php if ($update == true): ?>
           <button type="submit" class="btn btn-info" name="update8" style="font-size: 23px">Update</button>
