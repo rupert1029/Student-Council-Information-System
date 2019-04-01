@@ -132,10 +132,10 @@
   		</div><br/>
   		<br/><br/>
   		<center>
-			<?php if ($update == true): ?>
-					<button type="submit" class="btn btn-info" name="update10" style="font-size: 23px">Update</button>
+			 <?php if ($update == true): ?>
+			<button type="submit" class="btn btn-info" name="update10" style="font-size: 23px">Update</button>
        		<?php else: ?>
-					<button type="submit" class="btn btn-info" name="save" style="font-size: 23px">Save</button>
+			<button type="submit" class="btn btn-info" name="save" style="font-size: 23px">Save</button>
       		<?php endif ?>
 		</center>
 	</form>
