@@ -277,16 +277,17 @@
 	}
 
 	//EDIT FINES
-	if (isset($_POST['update8'])) {
+	if (isset($_POST['update9'])) {
 		$id_number = $_POST['id_number'];
-		$event_code = $_POST['event_code'];
-		$penalty = $_POST['penalty'];
+		$status = $_POST['status'];
+		$date_of_payment = $_POST['date_of_payment'];
 
-		$query = "SELECT * FROM fines WHERE id_number ='$id_number'";
+		$query = "SELECT * FROM fines WHERE id_number ='$id_number';";
 		$results = mysqli_query($db, $query);
-		if (mysqli_num_rows($results)==1){
+			
+		if (mysqli_num_rows($results)>0){
 			while ($row = mysqli_fetch_assoc($results)) {
-				mysqli_query($db, "UPDATE fines SET id_number ='$id_number', event_code ='$event_code', penalty ='$penalty' WHERE id_number ='$id_number'");
+				mysqli_query($db, "UPDATE fines SET status ='$status', date_of_payment ='$date_of_payment' WHERE id_number ='$id_number'");
 				$_SESSION['message'] = "Successfully updated!"; 
 				header('location: fines_list.php');
 				}
@@ -384,20 +385,38 @@
 
 //ADD ORGANIZATION OFFICER
 		$id_number = "";
+		$organization_code = "";
 		$position = "";
-		$section_id="";
 		$academic_code = "";
 		$update = false;
-	if(isset($_POST['larga'])){
+	if(isset($_POST['submiterer'])){
 		$id_number = $_POST['id_number'];
-		$section_id = $_POST['section_id'];
+		$organization_code = $_POST['organization_code'];
 		$position = $_POST['position'];
 		$academic_code = $_POST['academic_code'];
 
-		$sql = "INSERT INTO organization_officer (id_number, position, section_id, academic_code )
-			VALUES ('$id_number','$position','$section_id','$academic_code')";
+		$sql = "INSERT INTO organization_officer (id_number, organization_code, position, academic_code )
+			VALUES ('$id_number','$organization_code','$position','$academic_code')";
 			mysqli_query($db, $sql);
 			$_SESSION['message'] = "successfully saved";
 			header('location: organization_officer_list.php'); //redirect to homepage
 	}
+
+	//ADD ORGANIZATION MEMBER
+		$id_number = "";
+		$organization_code = "";
+		$academic_code = "";
+		$update = false;
+	if(isset($_POST['sige'])){
+		$id_number = $_POST['id_number'];
+		$organization_code = $_POST['organization_code'];
+		$academic_code = $_POST['academic_code'];
+
+		$sql = "INSERT INTO organization_officer (id_number, organization_code, academic_code )
+			VALUES ('$id_number','$organization_code','$academic_code')";
+			mysqli_query($db, $sql);
+			$_SESSION['message'] = "successfully saved";
+			header('location: organization_member_list.php'); //redirect to homepage
+	}
+
 	?>

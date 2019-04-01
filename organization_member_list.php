@@ -1,7 +1,7 @@
 <?php include('server.php')?>
 <html>
 <head>
-<title>Student List</title>
+<title>Section List</title>
 	<link rel = "stylesheet" href = "bootstrap/css/bootstrap.min.css">
 	<link rel = "stylesheet" href = "font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
@@ -37,37 +37,32 @@
 <!-- Table List -->
 		<div class="container"><br/><br/>
 		<a class="fa fa-home" href="index.php" style="font-size:25px"> Home</a><br/><br/>
-		<center><h2>Moderator List</h2></center>
-		<?php $results = mysqli_query($db, "SELECT * FROM organization_moderator,academic_year,organization WHERE organization_moderator.academic_code=academic_year.academic_code AND organization_moderator.organization_code=organization.organization_code"); ?>
+		<center><h2>Organization Member List</h2></center>
+		<?php $results = mysqli_query($db, "SELECT * FROM organization_member,student,academic_year,organization WHERE organization_member.id_number=student.id_number AND organization_member.academic_code=academic_year.academic_code AND organization_member.organization_code=organization.organization_code"); ?>
 			<table class="table table-secondary" style="margin-top:20px">
 			<thead class="thead-light">
 				<tr class="success">
-				<th scope="col">Instructor ID</th>	
-				<th scope="col">Last Name</th>
-				<th scope="col">First Name</th>
-				<th scope="col">Middle Name</th>
-				<th scope="col">Organization Code</th>
-				<th scope="col">Academic Year</th>
-				<th scope="col">Options</th>
+					<th scope="col">ID Number</th>
+					<th scope="col">Student Name</th>
+					<th scope="col">Organization Name</th>
+					<th scope="col">Academic Year</th>
+					<th scope="col">Action</th>
 				</tr>
 			</thead>
 			<?php while ($row = mysqli_fetch_array($results)){ ?>
 			<tbody>
 				<tr>
-				<td><?php echo $row['instructor_id']?></td>
-				<td><?php echo $row['last_name']?></td>
-				<td><?php echo $row['first_name']?></td>
-				<td><?php echo $row['middle_name']?></td>
-				<td><?php echo $row['organization_name']." "."(".$row['organization_code'].")" ?></td>
-				<td><?php echo $row['acad_year']." "."(".$row['semester'].")" ?></td>
-				<td><a class="fa fa-edit" href="student_update.php?edit=<?php echo $row['id_number']; ?>"> Edit</a> | <a class="fa fa-trash" href ="#" data-toggle="modal" data-target="#exampleModal"> Delete</a></td>
+					<td><?php echo ($row['id_number'])?></td>
+					<td><?php echo ucwords($row['last_name']." ".$row['first_name']." ".$row['middle_name'])?></td>
+					<td><?php echo $row['organization_name']." "."(".$row['organization_code'].")" ?></td>
+					<td><?php echo $row['acad_year']." "."(".$row['semester'].")" ?></td>
+					<td><a class="fa fa-edit" href="section_officer_update.php?edit4=<?php echo $row['id_number']; ?>"> Edit</a> | <a class="fa fa-trash" href ="#" data-toggle="modal" data-target="#exampleModal"> Delete</a></td>
 				</tr>
 			</tbody>
 			 <?php } ?>
 			</table><br/>
-			<a href = "organization_moderator_add.php"><button type="button" class="btn btn-info fa fa-user-plus" style="font-size: 23px; margin-left:935px"> Add Moderator</button></a></li>
+			<a href = "organization_member_add.php"><button type="button" class="btn btn-info fa fa-plus" style="font-size: 23px; margin-left:935px"> Add Organization Member</button></a></li>
 		</div>	
-
 
 <!-- Delete Modal -->
 		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -38,13 +38,12 @@
     <div class="container"><br/><br/>
     <a class="fa fa-home" href="index.php" style="font-size:25px"> Home</a><br/><br/>
     <center><h2>Fines List</h2></center>
-    <?php $results = mysqli_query($db, "SELECT * FROM student,fines WHERE student.id_number = fines.id_number"); ?>
+    <?php $results = mysqli_query($db, "SELECT fines.id_number,fines.status,fines.date_of_payment,student.last_name,student.first_name,student.middle_name,Sum(penalty) as amount FROM fines,student  WHERE fines.id_number=student.id_number GROUP BY id_number"); ?>
       <table class="table table-secondary" style="margin-top:20px">
       <thead class="thead-light">
         <tr class="success">
         <th scope="col">ID Number</th> 
         <th scope="col">Student Name</th> 
-        <th scope="col">Event Code</th>
         <th scope="col">Penalty</th>
         <th scope="col">Status</th>
         <th scope="col">Date of Payment</th>
@@ -56,10 +55,16 @@
         <tr>
         <td><?php echo $row['id_number']?></td>
         <td><?php echo ucwords($row['last_name']." ".$row['first_name']." ".$row['middle_name'])?></td>
-        <td><?php echo $row['event_code']?></td>
-        <td><?php echo $row['penalty']?></td>
-        <td><?php echo $row['status']?></td>
-        <td><?php echo $row['date_of_payment']?></td>
+        <td><?php echo "₱".$row['amount']?></td>
+        <td style="font-weight: bold"><?php echo $row['status']?></td>
+        <td><?php if ($row['date_of_payment'] == NULL){
+						echo "";
+				      		}
+				      	else
+				      		{
+				      	echo date('d M Y, g:i A',strtotime($row['date_of_payment']));}?>
+				      		
+				      </td>
         <td><a class="fa fa-edit" href="fines_update.php?edit8=<?php echo $row['id_number']; ?>"> Edit</a> | <a class="fa fa-trash" href ="#" data-toggle="modal" data-target="#exampleModal"> Delete</a></td>
         </tr>
       </tbody>

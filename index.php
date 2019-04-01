@@ -32,6 +32,8 @@
 	</nav>
 
 <!--Button Group-->
+<div class="row">
+	<div class="col">
   		<div class="btn-toolbar align-left-content-between" role="toolbar" aria-label="Toolbar with button groups" style="margin-top: 2px">
   			<div class="btn-group-vertical mr-2" role="group" aria-label="First group">
     			<a href = "student_list.php"><button type="button" class="btn btn-info" style="width: 200px; border-radius: 0px">Students</button></a>
@@ -42,20 +44,23 @@
     			<a href = "organization_list.php"><button type="button" class="btn btn-info" style="width: 200px; border-radius: 0px">Organizations</button></a>
     			<a href = "organization_moderator_list.php"><button type="button" class="btn btn-info" style="width: 200px; border-radius: 0px">Organization Moderator</button></a>
     			<a href = "organization_officer_list.php"><button type="button" class="btn btn-info" style="width: 200px; border-radius: 0px">Organization Officers</button></a>
-    			<a href = ""><button type="button" class="btn btn-info" style="width: 200px; border-radius: 0px">Organization Members</button></a>
+    			<a href = "organization_member_list.php"><button type="button" class="btn btn-info" style="width: 200px; border-radius: 0px">Organization Members</button></a>
     			<a href = "academicyear_list.php"><button type="button" class="btn btn-info" style="width: 200px; border-radius: 0px">Academic Year</button></a>
     			<a href = "event_list.php"><button type="button" class="btn btn-info" style="width: 200px; border-radius: 0px">Events</button></a>
     			<a href = "fines_list.php"><button type="button" class="btn btn-info" style="width: 200px; border-radius: 0px">Fines</button></a>
 
   			</div>
   		</div>
-
+  	</div>
+ </div>
 <!--Carousel-->
+<div class="row">
+	<div class="col">
 		<div style="margin-left:160px; margin-right:50px; margin-top:-650px">
 			<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 				<div class="carousel-inner" style="margin-top:5px">
 					<div class="carousel-item active">
-						<img src="C.png" class="d-block w-100 h-100" alt="...">
+						<img src="C.png" class="d-block w-100" alt="...">
 					</div>
 				</div>
 					<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -68,6 +73,9 @@
 					</a>
 			</div>
 		</div>
+	</div>
+</div>
+</div>
 </div>
 
 <!-- Dropdown Menus Activation -->

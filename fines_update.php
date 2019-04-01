@@ -4,15 +4,17 @@
   if (isset($_GET['edit8'])) {
     $id_number = $_GET['edit8'];
     $update = true;
-    $record = mysqli_query($db, "SELECT * FROM fines WHERE id_number='$id_number'");
-    
-  
-      $result = mysqli_fetch_array($record);
-      $id_number = $result["id_number"];
-      $event_code = $result["event_code"];
-      $penalty = $result["penalty"];
-    
-  } 
+    $record = mysqli_query($db, "SELECT fines.id_number,fines.status,fines.date_of_payment,fines.event_code,Sum(penalty) as amount FROM fines WHERE id_number='$id_number'");
+		
+	
+			$result = mysqli_fetch_array($record);
+			$id_number = $result["id_number"];
+			$event_code = $result['event_code'];
+			$amount = $result["amount"];
+			$status = $result["status"];
+			$date_paid = $result["date_of_payment"];
+		
+	}	
 ?>
 
 <!DOCTYPE html>
@@ -56,7 +58,7 @@
 		<center><h2>Update Fines</h2></center><br/>
 
 <!--Input Group-->
-	<form method="POST" action="fines_list.php">
+	<form method="POST" action="server.php">
   		<div class="row" style="width:570px">
     		<div class="col">
           <h5>Select Student Name:</h5><select name = "id_number" class="form-control">
@@ -76,30 +78,35 @@
   		</div><br/>
   		<div class="row">
     		<div class="col">
-      			<h5>Total Penalty:</h5><input type="text" class="form-control" value="<?php echo $penalty; ?>" name="penalty" style="width:540px" readonly>
+      			<h5>Total Penalty:</h5><input type="text" class="form-control" value="<?php echo "₱".$amount; ?>" name="penalty" style="width: 540px" readonly>
     		</div>
   		</div><br/>
         <div class="row">
         <div class="col">
-          <h5>Status:</h5><select name = "status" class="form-control">
+          <h5>Status:</h5><select name="status" class="form-control">
                   <option selected>Status</option>
                   <option value="Paid">Paid</option>
           </select>
         </div>
         <div class="col">
-            <h5>Date of Payment:</h5><input type="date" value="mm-dd-yyyy" class="form-control" placeholder="Date" name="date_of_payment" required>
+            <h5>Date of Payment: </h5><input type="date" class="form-control" name="date_of_payment" required>
         </div>
       </div><br/><br/><br/>
   		<center>
-			<?php if ($update == true): ?>
-          <button type="submit" class="btn btn-info" name="update8" style="font-size: 23px">Update</button>
-          <?php else: ?>
+			    <?php if ($update == true): ?>
+          <button type="submit" class="btn btn-info" name="update9" style="font-size: 23px" onclick="myFunction()">Update</button>
+          	<?php else: ?>
           <button type="submit" class="btn btn-info" name="save" style="font-size: 23px">Save</button>
-          <?php endif ?>
+          	<?php endif ?>
 		</center>
 	</form>
 
 <!-- Dropdown Menus Activation -->
+<script>
+function myFunction() {
+  confirm("Successfully Updated!");
+}
+</script>
 <script src="bootstrap/js/jquery-slim.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
 

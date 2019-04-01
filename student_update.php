@@ -62,23 +62,23 @@
 	<form method="POST" action="student_list.php">
   		<div class="row" style="width:300px">
     		<div class="col">
-     	 		<input type="text" class="form-control"  value="<?php echo $id_number; ?>" name="id_number" required autofocus>
+     	 		<h5>ID Number:</h5><input type="text" class="form-control"  value="<?php echo $id_number; ?>" name="id_number" required autofocus>
     		</div>
   		</div><br/>
   		<div class="row">
     		<div class="col">
-     	 		<input type="text" class="form-control" value="<?php echo $last_name; ?>" name="last_name" required>
+     	 		<h5>Last Name:</h5><input type="text" class="form-control" value="<?php echo $last_name; ?>" name="last_name" required>
     		</div>
     		<div class="col">
-      			<input type="text" class="form-control" value="<?php echo $first_name; ?>" name="first_name" required>
+      		<h5>First Name:</h5><input type="text" class="form-control" value="<?php echo $first_name; ?>" name="first_name" required>
     		</div>
     		<div class="col">
-      			<input type="text" class="form-control" value="<?php echo $middle_name; ?>" name="middle_name" required>
+      		<h5>Middle Name:</h5><input type="text" class="form-control" value="<?php echo $middle_name; ?>" name="middle_name" required>
     		</div>
   		</div><br/>
   		<div class="row">
   			<div class="col">
-  			<select name = "course_code" class="form-control">
+  			<h5>Course Code:</h5><select name = "course_code" class="form-control">
     			<option selected>Course Code</option>
           <?php 
               $query = "SELECT * FROM program";
@@ -94,7 +94,7 @@
   			</select>
   			</div>
   			<div class="col">
-  			<select name = "section_id" class="form-control">
+  			<h5>Year and Section:</h5><select name = "section_id" class="form-control">
     			<option selected>Year and Section</option>
           <?php 
               $query = "SELECT * FROM section";
@@ -109,7 +109,7 @@
   			</select>
   			</div>
   			<div class="col">
-      			<input type="text" class="form-control" value="<?php echo $status; ?>" name="status" required>
+      			<h5>Status:</h5><input type="text" class="form-control" value="<?php echo $status; ?>" name="status" required>
     		</div>
   		</div><br/><br/>
   		<center>
