@@ -38,14 +38,14 @@
 		<div class="container"><br/><br/>
 		<a class="fa fa-home" href="index.php" style="font-size:25px"> Home</a><br/><br/>
 		<center><h2>Section Officer List</h2></center>
-		<?php $results = mysqli_query($db, "SELECT * FROM section_officer,student,academic_year WHERE student.id_number=section_officer.id_number AND section_officer.academic_code=academic_year.academic_code"); ?>
+		<?php $results = mysqli_query($db, "SELECT * FROM section_officer,student,section,academic_year WHERE section_officer.id_number=student.id_number AND section_officer.section_id=section.section_id AND section_officer.academic_code=academic_year.academic_code"); ?>
 			<table class="table table-secondary" style="margin-top:20px">
 			<thead class="thead-light">
 				<tr class="success">
 					<th scope="col">ID Number</th>
 					<th scope="col">Student Name</th>
-					<th scope="col">Year & Section</th>
 					<th scope="col">Position</th>
+					<th scope="col">Section</th>
 					<th scope="col">Academic Year</th>
 					<th scope="col">Action</th>
 				</tr>
@@ -55,33 +55,17 @@
 				<tr>
 					<td><?php echo ($row['id_number'])?></td>
 					<td><?php echo ucwords($row['last_name']." ".$row['first_name']." ".$row['middle_name'])?></td>
-					<td><?php echo $row['section_id']?></td>
 					<td><?php echo $row['position']?></td>
+					<td><?php echo $row['section_id'] ?></td>
 					<td><?php echo $row['acad_year']." "."(".$row['semester'].")" ?></td>
-					<td><a class="fa fa-edit" href="section_officer_update.php?edit4=<?php echo $row['id_number']; ?>"> Edit</a> | <a class="fa fa-trash" href ="#" data-toggle="modal" data-target="#exampleModal"> Delete</a></td>
+					<td><a class="fa fa-edit" href="section_officer_update.php?edit9=<?php echo $row['id_number']; ?>"> Edit</a> 
 				</tr>
 			</tbody>
 			 <?php } ?>
 			</table><br/>
-			<a href = "section_officer_add.php"><button type="button" class="btn btn-info fa fa-plus" style="font-size: 23px; margin-left:935px"> Add Section Officer</button></a></li>
+			<a href = "section_officer_add.php"><button type="button" class="btn btn-info fa fa-plus" style="font-size: 23px; margin-left:935px"> Add Organization Officer</button></a></li>
 		</div>	
 
-<!-- Delete Modal -->
-		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog" role="document">
-			<div class="modal-content">
-			<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel" style="color:red; font-size:35px">WARNING!!!</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body fa fa-info-circle" style="font-size:30px; color:#428bca">
-			You cannot delete this data.
-			</div>
-			</div>
-			</div>
-		</div>
 
 <!-- Dropdown Menus Activation -->
 <script src="bootstrap/js/jquery-slim.min.js"></script>

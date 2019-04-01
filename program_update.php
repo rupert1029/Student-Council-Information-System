@@ -56,16 +56,16 @@
 	<form method="POST" action="program_list.php">
   		<div class="row">
     		<div class="col">
-     	 		<input type="text" class="form-control"  value="<?php echo $course_code; ?>" name="course_code" required>
+     	 		<h5>Course Code:</h5><input type="text" class="form-control"  value="<?php echo $course_code; ?>" name="course_code" readonly>
     		</div>
     		<div class="col">
-      			<input type="text" class="form-control"  value="<?php echo $course_name; ?>" name="course_name" required>
+      			<h5>Course Name:</h5><input type="text" class="form-control"  value="<?php echo $course_name; ?>" name="course_name" required>
     		</div>
   		</div><br/>
   		<div class="row" style="width:380px">
   			<div class="col">
-  			<select name = "department_code" class="form-control">
-    			<option selected>Department Code</option>
+  			<h5>Department Code:</h5><select name = "department_code" class="form-control">
+    			<option selected><?php echo $department_code ?></option>
           <?php 
               $query = "SELECT * FROM department";
               $results = mysqli_query($db, $query); 

@@ -58,10 +58,10 @@
   		</div><br/>
   		<div class="row">
     		<div class="col">
-     	 		<input type="text" class="form-control" value="<?php echo $department_code; ?>" name="department_code" required>
+     	 	<h5>Department Name:</h5><input type="text" class="form-control" value="<?php echo $department_code; ?>" name="department_code" readonly>
     		</div>
     		<div class="col">
-      			<input type="text" class="form-control" value="<?php echo $department_name; ?>" name="department_name" required>
+      		<h5>Department Name:</h5><input type="text" class="form-control" value="<?php echo $department_name; ?>" name="department_name" required>
     		</div>
     	<?php }?>
   		</div><br/>

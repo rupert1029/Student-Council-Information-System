@@ -57,10 +57,10 @@
   		</div><br/>
   		<div class="row">
     		<div class="col">
-     	 		<input type="text" class="form-control" value="<?php echo $section_id; ?>" name="section_id" required>
+     	 		<h5>Section ID:</h5><input type="text" class="form-control" value="<?php echo $section_id; ?>" name="section_id" readonly>
     		</div>
     		<div class="col">
-      			<input type="text" class="form-control" value="<?php echo $year; ?>" name="year" required>
+      			<h5>Year Level:</h5><input type="text" class="form-control" value="<?php echo $year; ?>" name="year" required>
     		</div>
   		</div><br/>
   		<br/><br/>

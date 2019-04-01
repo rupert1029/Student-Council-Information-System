@@ -79,7 +79,7 @@
   		<div class="row">
   			<div class="col">
   			<h5>Course Code:</h5><select name = "course_code" class="form-control">
-    			<option selected>Course Code</option>
+    			<option selected><?php echo $course_code ?></option>
           <?php 
               $query = "SELECT * FROM program";
               $results = mysqli_query($db, $query); 
@@ -95,7 +95,7 @@
   			</div>
   			<div class="col">
   			<h5>Year and Section:</h5><select name = "section_id" class="form-control">
-    			<option selected>Year and Section</option>
+    			<option selected><?php echo $section_id ?></option>
           <?php 
               $query = "SELECT * FROM section";
               $result = mysqli_query($db, $query); 

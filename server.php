@@ -329,31 +329,34 @@
 	//ADD SECTION OFFICER
 		$id_number = "";
 		$position = "";
+		$section_id = "";
 		$academic_code = "";
 		$update = false;
-	if(isset($_POST['submiter'])){
+	if(isset($_POST['submitererss'])){
 		$id_number = $_POST['id_number'];
 		$position = $_POST['position'];
+		$section_id = $_POST['section_id'];
 		$academic_code = $_POST['academic_code'];
 
-		$sql = "INSERT INTO section_officer (id_number, section_id, position, academic_code )
-			VALUES ('$id_number','$section_id','$position','$academic_code')";
+		$sql = "INSERT INTO section_officer (id_number, position, section_id, academic_code )
+			VALUES ('$id_number','$position','$section_id','$academic_code')";
 			mysqli_query($db, $sql);
 			$_SESSION['message'] = "successfully saved";
 			header('location: section_officer_list.php'); //redirect to homepage
 	}
 
 	//EDIT SECTION OFFICER
-	if(isset($_POST['update4'])){
+	if(isset($_POST['update10'])){
 		$id_number = $_POST['id_number'];
 		$position = $_POST['position'];
+		$academic_code = $_POST['section_id'];
 		$academic_code = $_POST['academic_code'];
 
 		$query = "SELECT * FROM section_officer WHERE id_number ='$id_number'";
 		$results = mysqli_query($db, $query);
 		if (mysqli_num_rows($results)==1){
 			while ($row = mysqli_fetch_assoc($results)) {
-				mysqli_query($db, "UPDATE section_officer SET id_number ='$id_number', position ='$position',academic_code ='$academic_code' WHERE id_number ='$id_number'");
+				mysqli_query($db, "UPDATE section_officer SET id_number ='$id_number', position ='$position', section_id='$section_id', academic_code ='$academic_code' WHERE id_number ='$id_number'");
 				$_SESSION['message'] = "Successfully updated!"; 
 				header('location: section_officer_list.php');
 				}

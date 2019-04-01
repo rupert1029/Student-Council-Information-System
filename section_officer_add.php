@@ -74,6 +74,24 @@
 
 						</select>
     		</div>
+    	</div><br/>
+    	<div class="row">
+    		<div class="col">
+  			<h5>Section ID:</h5><select name = "section_id" class="form-control">
+    			<option selected>Year and Section</option>
+          <?php 
+              $query = "SELECT * FROM section";
+              $result = mysqli_query($db, $query); 
+              $count = mysqli_num_rows($result);
+              if($count = 1){
+                while ($row = mysqli_fetch_array($result)){
+            ?>
+            <option value = "<?php echo $row['section_id'] ?>"><?php echo $row['section_id']?></option>
+              
+              <?php } 
+                }?>
+  			</select>
+  			</div>
     		<div class="col">
 						<h5>Academic Year:</h5><select name = "academic_code" class="form-control">
 				     		 <option selected>Select Academic Year</option>
@@ -96,7 +114,7 @@
   		<br/><br/>
   		<center>
 			<button type="reset" class="btn btn-danger" style="font-size: 23px">Reset</button>
-			<button type="submit" class="btn btn-info" name="submiter" style="font-size: 23px">Save</button>
+			<button type="submit" class="btn btn-info" name="submitererss" style="font-size: 23px">Save</button>
 		</center>
 	</form>
 

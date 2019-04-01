@@ -1,16 +1,21 @@
 <?php include('server.php'); 
 
-  if (isset($_GET['edit4'])) {
-    $id_number = $_GET['edit4'];
-    $update = true;
-    $record = mysqli_query($db, "SELECT * FROM section_officer WHERE id_number='$id_number'");
-    
-    		$n = mysqli_fetch_array($record);
+		
+	if (isset($_GET['edit9'])) {
+		$organization_code = $_GET['edit9'];
+		$update = true;
+		$record = mysqli_query($db, "SELECT * FROM section_officer WHERE id_number='$id_number'");
+		
+	
+			$n = mysqli_fetch_array($record);
 			$id_number = $n["id_number"];
 			$position = $n["position"];
-			$academic_code = $n["academic_code"];
 			$section_id = $n["section_id"];
-  
+			$academic_code = $n["academic_code"];
+		
+	}	
+
+
 ?>
 
 <!DOCTYPE html>
@@ -59,7 +64,7 @@
   		</div><br/>
   		<div class="row">
     		<div class="col">
-     	 		<select name = "id_number" class="form-control">
+     	 		<h5>Select Student:</h5><select name = "id_number" class="form-control">
 								  <option selected>Select Student</option>
 									<?php 
 										$query = "SELECT * FROM student";
@@ -68,18 +73,18 @@
 										if($count = 1){
 											while ($row = mysqli_fetch_array($result)){
 									?>
-									<option value="<?php echo $row['id_number'] ?>" ><?php echo ucwords($row['first_name'] ." ". $row['middle_name'] ." ". $row['last_name']) ?></option>										
+									<option value="<?php echo $row['id_number'] ?>" ><?php echo ucwords($row['last_name'] ." ". $row['first_name'] ." ". $row['middle_name']) ?></option>										
 									
 									<?php } 
 							  		}?>
 						</select>
     		</div>
     		<div class="col">
-      			<select name = "position" class="form-control">
+      			<h5>Position:</h5><select name = "position" class="form-control">
 								  <option selected>Select Position</option>
 									<option value="President">President</option>
 									<option value="Vice-President">Vice-President</option>
-									<option value="Vecretary">Secretaty</option>
+									<option value="Secretary">Secretary</option>
 									<option value="Treasurer">Treasurer</option>
 									<option value="Auditor">Auditor</option>
 									<option value="P.I.O">P.I.O</option>
@@ -88,8 +93,26 @@
 
 						</select>
     		</div>
+    	</div><br/>
+    	<div class="row">
     		<div class="col">
-						<select name = "academic_code" class="form-control">
+  			<h5>Section ID:</h5><select name = "section_id" class="form-control">
+    			<option selected>Year and Section</option>
+          <?php 
+              $query = "SELECT * FROM section";
+              $result = mysqli_query($db, $query); 
+              $count = mysqli_num_rows($result);
+              if($count = 1){
+                while ($row = mysqli_fetch_array($result)){
+            ?>
+            <option value = "<?php echo $row['section_id'] ?>"><?php echo $row['section_id']?></option>
+              
+              <?php } 
+                }?>
+  			</select>
+  			</div>
+    		<div class="col">
+						<h5>Academic Year:</h5><select name = "academic_code" class="form-control">
 				     		 <option selected>Select Academic Year</option>
 									<?php 
 										$query = "SELECT * FROM academic_year";
@@ -108,10 +131,9 @@
 
   		</div><br/>
   		<br/><br/>
-  		<?php }?>
   		<center>
 			<?php if ($update == true): ?>
-					<button type="submit" class="btn btn-info" name="update4" style="font-size: 23px">Update</button>
+					<button type="submit" class="btn btn-info" name="update10" style="font-size: 23px">Update</button>
        		<?php else: ?>
 					<button type="submit" class="btn btn-info" name="save" style="font-size: 23px">Save</button>
       		<?php endif ?>
