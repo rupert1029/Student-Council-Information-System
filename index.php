@@ -25,7 +25,8 @@
 				<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:25px;">
 				</button>
 				<div class="dropdown-menu">
-					<a class="dropdown-item fa fa-power-off" href="login.php">Logout</a>
+					<a class="dropdown-item fa fa-lock" href="change.php"> Change Password</a><br/>
+					<a class="dropdown-item fa fa-power-off" href="login.php"> Logout</a>
 				</div>
 			</div>
 		</nav>
@@ -33,8 +34,8 @@
 
 <!--Button Group-->
 <div class="row">
-	<div class="col">
-  		<div class="btn-toolbar align-left-content-between" role="toolbar" aria-label="Toolbar with button groups" style="margin-top: 2px">
+	<div class="column">
+  		<div class="btn-toolbar align-left-content-between" role="toolbar" aria-label="Toolbar with button groups" style="margin-top: 2px; margin-left: 15px">
   			<div class="btn-group-vertical mr-2" role="group" aria-label="First group">
     			<a href = "student_list.php"><button type="button" class="btn btn-info" style="width: 200px; border-radius: 0px">Students</button></a>
     			<a href = "department_list.php"><button type="button" class="btn btn-info" style="width: 200px; border-radius: 0px">Department</button></a>
@@ -52,11 +53,9 @@
   			</div>
   		</div>
   	</div>
- </div>
 <!--Carousel-->
-<div class="row">
 	<div class="col">
-		<div style="margin-left:160px; margin-right:50px; margin-top:-650px">
+		<div style="margin-left:10px; margin-right:50px; margin-top:-140px">
 			<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 				<div class="carousel-inner" style="margin-top:5px">
 					<div class="carousel-item active">
@@ -74,7 +73,7 @@
 			</div>
 		</div>
 	</div>
-</div>
+
 </div>
 </div>
 

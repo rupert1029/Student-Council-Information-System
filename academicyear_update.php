@@ -63,7 +63,7 @@
   		</div><br/>
   		<div class="row">
     		<div class="col">
-     	 		<input type="integer" class="form-control" value="<?php echo $academic_code; ?>" name="academic_code" required>
+     	 		<input type="integer" class="form-control" value="<?php echo $academic_code; ?>" name="academic_code" readonly>
     		</div>
     		<div class="col">
      	 		<input type="text" class="form-control" value="<?php echo $acad_year; ?>" name="acad_year" required>

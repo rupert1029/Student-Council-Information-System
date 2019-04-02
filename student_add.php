@@ -96,11 +96,16 @@
   		</div><br/><br/>
   		<center>
 			<button type="reset" class="btn btn-danger" style="font-size: 23px">Reset</button>
-			<button type="submit" class="btn btn-info" name="save" style="font-size: 23px">Save</button>
+			<button type="submit" class="btn btn-info" name="save" style="font-size: 23px" onclick="myFunction()">Save</button>
 		</center>
 	</form>
 
 <!-- Dropdown Menus Activation -->
+<script>
+function myFunction() {
+  confirm("Successfully Saved!");
+}
+</script>
 <script src="bootstrap/js/jquery-slim.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
 

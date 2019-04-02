@@ -45,20 +45,25 @@
   		</div><br/>
   		<div class="row">
     		<div class="col">
-     	 		<h5>Section ID:</h5><input type="text" class="form-control" placeholder="Section ID" name="section_id"  pattern="[A-Za-z0-9]+" required>
+     	 		<h5>Section ID:</h5><input type="text" class="form-control" placeholder="Section ID" name="section_id"   required>
     		</div>
     		<div class="col">
-      			<h5>Year Level:</h5><input type="text" class="form-control" placeholder="Year Level" name="year"  pattern="[A-Za-z0-9]+" required>
+      			<h5>Year Level:</h5><input type="text" class="form-control" placeholder="Year Level" name="year" required>
     		</div>
   		</div><br/>
   		<br/><br/>
   		<center>
 			<button type="reset" class="btn btn-danger" style="font-size: 23px">Reset</button>
-			<button type="submit" class="btn btn-info" name="go" style="font-size: 23px">Save</button>
+			<button type="submit" class="btn btn-info" name="go" style="font-size: 23px" onclick="myFunction()">Save</button>
 		</center>
 	</form>
 
 <!-- Dropdown Menus Activation -->
+<script>
+function myFunction() {
+  confirm("Successfully Saved!");
+}
+</script>
 <script src="bootstrap/js/jquery-slim.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
 

@@ -415,7 +415,7 @@
 		$organization_code = $_POST['organization_code'];
 		$academic_code = $_POST['academic_code'];
 
-		$sql = "INSERT INTO organization_officer (id_number, organization_code, academic_code )
+		$sql = "INSERT INTO organization_member (id_number, organization_code, academic_code )
 			VALUES ('$id_number','$organization_code','$academic_code')";
 			mysqli_query($db, $sql);
 			$_SESSION['message'] = "successfully saved";

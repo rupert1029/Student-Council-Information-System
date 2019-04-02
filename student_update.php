@@ -62,7 +62,7 @@
 	<form method="POST" action="student_list.php">
   		<div class="row" style="width:300px">
     		<div class="col">
-     	 		<h5>ID Number:</h5><input type="text" class="form-control"  value="<?php echo $id_number; ?>" name="id_number" required autofocus>
+     	 		<h5>ID Number:</h5><input type="text" class="form-control"  value="<?php echo $id_number; ?>" name="id_number" readonly>
     		</div>
   		</div><br/>
   		<div class="row">
@@ -114,7 +114,7 @@
   		</div><br/><br/>
   		<center>
        <?php if ($update == true): ?>
-			<button type="submit" class="btn btn-info" name="update" style="font-size: 23px">Update</button>
+			<button type="submit" class="btn btn-info" name="update" style="font-size: 23px" onclick="myFunction()">Update</button>
        <?php else: ?>
 			<button type="submit" class="btn btn-info" name="save" style="font-size: 23px">Save</button>
       <?php endif ?>
@@ -122,6 +122,11 @@
 	</form>
 
 <!-- Dropdown Menus Activation -->
+<script>
+function myFunction() {
+  confirm("Successfully Updated!");
+}
+</script>
 <script src="bootstrap/js/jquery-slim.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
 

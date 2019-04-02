@@ -61,7 +61,7 @@
 	<form method="POST" action="event_list.php">
   		<div class="row">
     		<div class="col">
-     	 		<input type="text" class="form-control" value="<?php echo $event_code; ?>" name="event_code" required>
+     	 		<input type="text" class="form-control" value="<?php echo $event_code; ?>" name="event_code" readonly>
     		</div>
     		<div class="col">
       			<input type="text" class="form-control" value="<?php echo $event_name; ?>" name="event_name" required>
@@ -73,7 +73,7 @@
   		<br/><br/>
   		<center>
 			<?php if ($update == true): ?>
-					<button type="submit" class="btn btn-info" name="update7" style="font-size: 23px">Update</button>
+					<button type="submit" class="btn btn-info" name="update7" style="font-size: 23px"  onclick="myFunction()">Update</button>
        		<?php else: ?>
 					<button type="submit" class="btn btn-info" name="save" style="font-size: 23px">Save</button>
       		<?php endif ?>
@@ -81,6 +81,11 @@
 	</form>
 
 <!-- Dropdown Menus Activation -->
+<script>
+function myFunction() {
+  confirm("Successfully Updated!");
+}
+</script>
 <script src="bootstrap/js/jquery-slim.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
 

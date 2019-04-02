@@ -56,7 +56,7 @@
 					<td><?php echo ucwords($row['last_name']." ".$row['first_name']." ".$row['middle_name'])?></td>
 					<td><?php echo $row['organization_name']." "."(".$row['organization_code'].")" ?></td>
 					<td><?php echo $row['acad_year']." "."(".$row['semester'].")" ?></td>
-					<td><a class="fa fa-edit" href="section_officer_update.php?edit4=<?php echo $row['id_number']; ?>"> Edit</a> | <a class="fa fa-trash" href ="#" data-toggle="modal" data-target="#exampleModal"> Delete</a></td>
+					<td><a class="fa fa-edit" href="section_officer_update.php?edit4=<?php echo $row['id_number']; ?>"> Edit</a> 
 				</tr>
 			</tbody>
 			 <?php } ?>
@@ -64,22 +64,6 @@
 			<a href = "organization_member_add.php"><button type="button" class="btn btn-info fa fa-plus" style="font-size: 23px; margin-left:935px"> Add Organization Member</button></a></li>
 		</div>	
 
-<!-- Delete Modal -->
-		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog" role="document">
-			<div class="modal-content">
-			<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel" style="color:red; font-size:35px">WARNING!!!</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body fa fa-info-circle" style="font-size:30px; color:#428bca">
-			You cannot delete this data.
-			</div>
-			</div>
-			</div>
-		</div>
 
 <!-- Dropdown Menus Activation -->
 <script src="bootstrap/js/jquery-slim.min.js"></script>

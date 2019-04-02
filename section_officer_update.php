@@ -2,9 +2,9 @@
 
 		
 	if (isset($_GET['edit9'])) {
-		$organization_code = $_GET['edit9'];
+		$section_officer = $_GET['edit9'];
 		$update = true;
-		$record = mysqli_query($db, "SELECT * FROM section_officer WHERE id_number='$id_number'");
+		$record = mysqli_query($db, "SELECT * FROM `sco`.`student` WHERE `id_number` = '$id_number'");
 		
 	
 			$n = mysqli_fetch_array($record);
@@ -62,7 +62,7 @@
 	<form method="POST" action="section_officer_list.php">
   		<div class="row" style="width:300px">
   		</div><br/>
-  		<div class="row">
+  		<div class="row">	
     		<div class="col">
      	 		<h5>Select Student:</h5><select name = "id_number" class="form-control">
 								  <option selected>Select Student</option>
@@ -73,7 +73,7 @@
 										if($count = 1){
 											while ($row = mysqli_fetch_array($result)){
 									?>
-									<option value="<?php echo $row['id_number'] ?>" ><?php echo ucwords($row['last_name'] ." ". $row['first_name'] ." ". $row['middle_name']) ?></option>										
+									<option value="<?php echo $row['id_number'] ?>" ><?php echo ucwords($row['last_name'] ." ". $row['first_name'] ." ". $row['middle_name']) ?></option>									
 									
 									<?php } 
 							  		}?>
@@ -96,7 +96,7 @@
     	</div><br/>
     	<div class="row">
     		<div class="col">
-  			<h5>Section ID:</h5><select name = "section_id" class="form-control">
+  			<h5>Year and Section:</h5><select name = "section_id" class="form-control">
     			<option selected>Year and Section</option>
           <?php 
               $query = "SELECT * FROM section";
@@ -133,7 +133,7 @@
   		<br/><br/>
   		<center>
 			 <?php if ($update == true): ?>
-			<button type="submit" class="btn btn-info" name="update10" style="font-size: 23px">Update</button>
+			<button type="submit" class="btn btn-info" name="update10" style="font-size: 23px" onclick="myFunction()">Update</button>
        		<?php else: ?>
 			<button type="submit" class="btn btn-info" name="save" style="font-size: 23px">Save</button>
       		<?php endif ?>
@@ -141,6 +141,11 @@
 	</form>
 
 <!-- Dropdown Menus Activation -->
+<script>
+function myFunction() {
+  confirm("Successfully Updated!");
+}
+</script>
 <script src="bootstrap/js/jquery-slim.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
 

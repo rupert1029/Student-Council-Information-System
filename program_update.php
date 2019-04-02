@@ -83,7 +83,7 @@
   		<?php }?>
   		<center>
 			<?php if ($update == true): ?>
-					<button type="submit" class="btn btn-info" name="update2" style="font-size: 23px">Update</button>
+					<button type="submit" class="btn btn-info" name="update2" style="font-size: 23px" onclick="myFunction()">Update</button>
        		<?php else: ?>
 					<button type="submit" class="btn btn-info" name="save" style="font-size: 23px">Save</button>
       		<?php endif ?>
@@ -91,6 +91,11 @@
 	</form>
 
 <!-- Dropdown Menus Activation -->
+<script>
+function myFunction() {
+  confirm("Successfully Saved!");
+}
+</script>
 <script src="bootstrap/js/jquery-slim.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
 

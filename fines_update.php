@@ -84,7 +84,7 @@
         <div class="row">
         <div class="col">
           <h5>Status:</h5><select name="status" class="form-control">
-                  <option selected>Status</option>
+                  <option selected>Unpaid</option>
                   <option value="Paid">Paid</option>
           </select>
         </div>
